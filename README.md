@@ -9,6 +9,7 @@ npm run start
 npm run startWorker
 
 服务启动后，在其他的服务里像该服务post数据，数据格式见下表；详见tests 测试用例;
+**请求参数**
 |参数名称|类型|是否必填|说明|
 |---|---|---|---|
 |path|String|是|处理mq消息回调，z-mq-service将向path 发送post请求，你应该在相关的服务里吗处理该请求|
