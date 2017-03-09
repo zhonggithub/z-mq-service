@@ -33,7 +33,7 @@ test.serial('POST /api/mq/v1/messages ok', async (t) => {
       account: 'zz',
       email: 'quitjie@gmail.com',
     },
-    delay: 120,
+    delay: 3600,
   });
   if (res.status >= 400) console.log(res.text);
   t.is(res.status, 201);

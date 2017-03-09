@@ -9,7 +9,7 @@ const logger = Logger('queue');
 
 // worker define
 const options = _.defaults(Config.queue, {
-  interval: [1, 5],
+  interval: [0, 1, 5],
   timeout: 1000 * 60 * 2,
 });
 
