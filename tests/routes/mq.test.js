@@ -1,15 +1,14 @@
 import test from 'ava';
 import fetchMock from 'fetch-mock';
 import request from '../helpers/request';
-import { dbOrm } from '../../src/common';
 
 test.afterEach.always(() => {
   fetchMock.restore();
 });
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+// function sleep(ms) {
+//   return new Promise(resolve => setTimeout(resolve, ms));
+// }
 
 test.serial('POST /api/mq/v1/messages ok', async (t) => {
   const res = await request.post('/api/mq/v1/messages').send({
@@ -18,7 +17,7 @@ test.serial('POST /api/mq/v1/messages ok', async (t) => {
       name: 'zz',
       account: 'zz',
       email: 'quitjie@gmail.com',
-    }
+    },
   });
   if (res.status >= 400) console.log(res.text);
   t.is(res.status, 201);
